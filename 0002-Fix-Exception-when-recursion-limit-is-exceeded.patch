@@ -1,0 +1,33 @@
+From 0c68cf147460f99853888efd98a332ef39060313 Mon Sep 17 00:00:00 2001
+From: "Munoz, Obed N" <obed.n.munoz@intel.com>
+Date: Thu, 9 Jul 2015 15:15:23 -0500
+Subject: [PATCH] Fix Exception when recursion limit is exceeded
+
+Signed-off-by: Munoz, Obed N <obed.n.munoz@intel.com>
+---
+ osprofiler/cmd/commands.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/osprofiler/cmd/commands.py b/osprofiler/cmd/commands.py
+index 99a3acb..ca3ffbc 100644
+--- a/osprofiler/cmd/commands.py
++++ b/osprofiler/cmd/commands.py
+@@ -15,6 +15,7 @@
+ 
+ import json
+ import os
++import sys
+ 
+ from osprofiler.cmd import cliutils
+ from osprofiler.cmd import exc
+@@ -66,6 +67,7 @@ class TraceCommands(BaseCommand):
+ 
+         parsed_notifications = ceiloparser.parse_notifications(notifications)
+ 
++        sys.setrecursionlimit(10000)
+         if args.use_json:
+             output = json.dumps(parsed_notifications)
+         elif args.use_html:
+-- 
+2.4.5
+

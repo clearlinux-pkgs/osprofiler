@@ -1,0 +1,31 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+WebOb-python
+six-python
+six
+Sphinx-python
+oslosphinx-python
+testtools-python
+testtools
+testrepository-python
+python-subunit
+python-mock
+discover-python
+coverage-python
+hacking
+Jinja2
+docutils-python
+Pygments
+requests-python
+traceback2-python
+unittest2-python
+python-mimeparse-python
+extras-python
+extras
+pep8
+pyflakes-python
+flake8-python
+mccabe-python
+fixtures-python
+linecache2-python
+markupsafe-python
