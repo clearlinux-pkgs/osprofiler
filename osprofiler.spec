@@ -4,7 +4,7 @@
 #
 Name     : osprofiler
 Version  : 0.3.0
-Release  : 11
+Release  : 12
 URL      : http://tarballs.openstack.org/osprofiler/osprofiler-0.3.0.tar.gz
 Source0  : http://tarballs.openstack.org/osprofiler/osprofiler-0.3.0.tar.gz
 Summary  : OpenStack Profiler Library
