@@ -4,7 +4,7 @@
 #
 Name     : osprofiler
 Version  : 1.0.1
-Release  : 17
+Release  : 18
 URL      : http://tarballs.openstack.org/osprofiler/osprofiler-1.0.1.tar.gz
 Source0  : http://tarballs.openstack.org/osprofiler/osprofiler-1.0.1.tar.gz
 Summary  : OpenStack Profiler Library
@@ -28,8 +28,9 @@ BuildRequires : hacking
 BuildRequires : linecache2-python
 BuildRequires : markupsafe-python
 BuildRequires : mccabe-python
+BuildRequires : netaddr
 BuildRequires : oslo.config
-BuildRequires : oslo_utils-python
+BuildRequires : oslo.utils-python
 BuildRequires : oslosphinx-python
 BuildRequires : pbr
 BuildRequires : pep8
@@ -74,6 +75,7 @@ Summary: python components for the osprofiler package.
 Group: Default
 Requires: WebOb-python
 Requires: oslo.config
+Requires: oslo.utils-python
 Requires: six-python
 
 %description python
