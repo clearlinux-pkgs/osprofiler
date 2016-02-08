@@ -1,10 +1,32 @@
 CHANGES
 =======
 
+1.0.1
+-----
+
+* Disable staticmethods tracing
+
+1.0.0
+-----
+
+* Add fix for static and class methods in @trace_cls
+* Add raw Ceilometer events support to DevStack plugin
+* Use raw data storage for events to collect more info
+* Use oslo.utils reflection and avoid refinding decorated name
+* Move osprofiler tests into osprofiler
+* Consolidate osprofiler options
+* Remove argparse from requirements
+* Add py34 to tox env list
+* Make profiler timestamp json.dumps friendly
+* Replace deprecated library function os.popen() with subprocess
+* Add DevStack plugin
+
 0.4.0
 -----
 
+* Remove Py33 support
 * Make it possible to specify file path as a source for trace
+* Remove support for py26
 * Improve HTML reports performance
 * Fix TracedMeta class
 * Fix a couple of typos in doc strings
