@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+1.1.0
+-----
+
+* run py34 tests before py27 to work around testr bug
+* stop making a copy of options discovered by config generator
+* Make class detection more accurate
+
 1.0.1
 -----
 
@@ -10,6 +17,7 @@ CHANGES
 -----
 
 * Add fix for static and class methods in @trace_cls
+* Expose X-Trace-* constants
 * Add raw Ceilometer events support to DevStack plugin
 * Use raw data storage for events to collect more info
 * Use oslo.utils reflection and avoid refinding decorated name
@@ -31,6 +39,7 @@ CHANGES
 * Fix TracedMeta class
 * Fix a couple of typos in doc strings
 * Fix Ceilometer parser to use events
+* remove python 2.6 trove classifier
 * Add TracedMeta class
 * Update requirements
 * Deprecated tox -downloadcache option removed
