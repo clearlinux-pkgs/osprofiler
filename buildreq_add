@@ -7,10 +7,13 @@ fixtures-python
 flake8-python
 funcsigs-python
 hacking
+iso8601-python
 Jinja2
 linecache2-python
 markupsafe-python
 mccabe-python
+netaddr
+netifaces-python
 oslo.config
 oslosphinx-python
 oslo.utils-python
@@ -21,6 +24,7 @@ pluggy
 pyflakes-python
 Pygments
 py-python
+pyrsistent-python
 pytest
 python3-dev
 python-dev

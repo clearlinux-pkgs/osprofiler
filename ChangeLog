@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+1.2.0
+-----
+
+* Remove flake8 ignore list in tox.ini
+
 1.1.0
 -----
 
