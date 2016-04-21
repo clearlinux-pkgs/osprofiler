@@ -1,6 +1,26 @@
 CHANGES
 =======
 
+1.3.0
+-----
+
+* Add hepler to trace sessions
+* Add an error tip when trace_id is not found
+* Add a similar link with reference to similar projects/libraries
+* Continue work on standardizing osprofiler docs
+* Remove dead/broken link to example
+* Updates to doc conf.py to look the same as other projects
+* Clean thread local profiler object after usage
+* Avoid tracing class and static methods
+* Avoid multiple tracing when applying meta or class decorator
+* Remove outdated version
+* Dont claim copyright for future years
+* Use pkg_resources to get version
+* Enable bandit in gate
+* Fallback if git is absent
+* It's unnecessary set deprecate group for option 'enabled'
+* Add CONTRIBUTING.rst
+
 1.2.0
 -----
 
