@@ -4,7 +4,7 @@
 #
 Name     : osprofiler
 Version  : 1.4.0
-Release  : 30
+Release  : 31
 URL      : http://tarballs.openstack.org/osprofiler/osprofiler-1.4.0.tar.gz
 Source0  : http://tarballs.openstack.org/osprofiler/osprofiler-1.4.0.tar.gz
 Summary  : OpenStack Profiler Library
@@ -27,6 +27,7 @@ BuildRequires : fixtures-python
 BuildRequires : flake8-python
 BuildRequires : funcsigs-python
 BuildRequires : hacking
+BuildRequires : imagesize-python
 BuildRequires : iso8601-python
 BuildRequires : linecache2-python
 BuildRequires : markupsafe-python
