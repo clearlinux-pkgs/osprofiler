@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEB6CCA1483FA74EC (infra-root@openstack.org)
 #
 Name     : osprofiler
-Version  : 1.8.0
-Release  : 33
-URL      : https://tarballs.openstack.org/osprofiler/osprofiler-1.8.0.tar.gz
-Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-1.8.0.tar.gz
-Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-1.8.0.tar.gz.asc
+Version  : 1.9.0
+Release  : 34
+URL      : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz
+Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz
+Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz.asc
 Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -55,17 +55,17 @@ python components for the osprofiler package.
 
 
 %prep
-%setup -q -n osprofiler-1.8.0
+%setup -q -n osprofiler-1.9.0
 %patch1 -p1
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1492439653
+export SOURCE_DATE_EPOCH=1492457548
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1492439653
+export SOURCE_DATE_EPOCH=1492457548
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
