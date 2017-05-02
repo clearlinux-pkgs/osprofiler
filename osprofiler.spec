@@ -6,7 +6,7 @@
 #
 Name     : osprofiler
 Version  : 1.9.0
-Release  : 34
+Release  : 35
 URL      : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz
 Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz
 Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz.asc
