@@ -6,7 +6,7 @@
 #
 Name     : osprofiler
 Version  : 1.9.0
-Release  : 35
+Release  : 36
 URL      : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz
 Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz
 Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-1.9.0.tar.gz.asc
@@ -14,6 +14,8 @@ Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: osprofiler-bin
+Requires: osprofiler-python3
+Requires: osprofiler-license
 Requires: osprofiler-python
 Requires: WebOb
 Requires: netaddr
@@ -24,34 +26,50 @@ Requires: oslo.messaging
 Requires: oslo.utils
 Requires: requests
 Requires: six
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 Patch1: 0002-Fix-Exception-when-recursion-limit-is-exceeded.patch
 
 %description
-========================
 Team and repository tags
-========================
-.. image:: http://governance.openstack.org/badges/osprofiler.svg
-:target: http://governance.openstack.org/reference/tags/index.html
+        ========================
 
 %package bin
 Summary: bin components for the osprofiler package.
 Group: Binaries
+Requires: osprofiler-license
 
 %description bin
 bin components for the osprofiler package.
 
 
+%package license
+Summary: license components for the osprofiler package.
+Group: Default
+
+%description license
+license components for the osprofiler package.
+
+
 %package python
 Summary: python components for the osprofiler package.
 Group: Default
+Requires: osprofiler-python3
 
 %description python
 python components for the osprofiler package.
+
+
+%package python3
+Summary: python3 components for the osprofiler package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the osprofiler package.
 
 
 %prep
@@ -59,16 +77,18 @@ python components for the osprofiler package.
 %patch1 -p1
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492457548
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532379978
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1492457548
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/osprofiler
+cp LICENSE %{buildroot}/usr/share/doc/osprofiler/LICENSE
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -80,7 +100,13 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 /usr/bin/osprofiler
 
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/osprofiler/LICENSE
+
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
