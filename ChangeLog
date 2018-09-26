@@ -1,6 +1,17 @@
 CHANGES
 =======
 
+2.4.1
+-----
+
+* Use templates for cover and lower-constraints
+* add password for connecting redis-sentinel
+* add lib-forward-testing-python3 test job
+* add python 3.6 unit test job
+* import zuul job settings from project-config
+* Update reno for stable/rocky
+* Switch to stestr
+
 2.3.0
 -----
 
