@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+2.5.0
+-----
+
+* build universal wheels
+* Make tracing of SQL statements configurable in DevStack plugin
+
 2.4.1
 -----
 
