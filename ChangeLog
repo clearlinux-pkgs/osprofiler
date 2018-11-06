@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+2.5.1
+-----
+
+* Update min tox version to 2.0
+* In DevStack install Redis client library via pip, not as system package
+* When shortening span-ids, check if they're already short
+* Don't quote {posargs} in tox.ini
+
 2.5.0
 -----
 
