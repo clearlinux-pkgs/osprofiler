@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+2.5.2
+-----
+
+* In case of an error, always add message
+* Change http to https in reference link
+* Change openstack-dev to openstack-discuss
+* Configure Jaeger collector in DevStack
+
 2.5.1
 -----
 
