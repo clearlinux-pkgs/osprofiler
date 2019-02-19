@@ -1,11 +1,23 @@
 CHANGES
 =======
 
+2.6.0
+-----
+
+* Add sqlalchemy collector
+* Change python3.5 job to python3.7 job on Stein+
+* Use $STACK\_USER variable in install\_jaeger function
+* Add support for mongodb backend in devstack plugin
+* Reload keystone to apply osprofiler config
+* Do not insert osprofiler filter into Neutron api-paste pipeline
+* Allow test path to be overridden
+
 2.5.2
 -----
 
 * In case of an error, always add message
 * Change http to https in reference link
+* [devstack] Add support for elasticsearch backend
 * Change openstack-dev to openstack-discuss
 * Configure Jaeger collector in DevStack
 

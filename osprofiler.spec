@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : osprofiler
-Version  : 2.5.2
-Release  : 42
-URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.5.2.tar.gz
-Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.5.2.tar.gz
-Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.5.2.tar.gz.asc
+Version  : 2.6.0
+Release  : 43
+URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.6.0.tar.gz
+Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.6.0.tar.gz
+Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.6.0.tar.gz.asc
 Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -71,14 +71,14 @@ python3 components for the osprofiler package.
 
 
 %prep
-%setup -q -n osprofiler-2.5.2
+%setup -q -n osprofiler-2.6.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546552535
+export SOURCE_DATE_EPOCH=1550538713
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
