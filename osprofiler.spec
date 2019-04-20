@@ -6,7 +6,7 @@
 #
 Name     : osprofiler
 Version  : 2.6.0
-Release  : 43
+Release  : 44
 URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.6.0.tar.gz
 Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.6.0.tar.gz
 Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.6.0.tar.gz.asc
