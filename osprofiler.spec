@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : osprofiler
-Version  : 2.7.0
-Release  : 45
-URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.7.0.tar.gz
-Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.7.0.tar.gz
-Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.7.0.tar.gz.asc
+Version  : 2.8.0
+Release  : 46
+URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.0.tar.gz
+Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.0.tar.gz
+Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.0.tar.gz.asc
 Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -25,8 +25,16 @@ Requires: oslo.serialization
 Requires: oslo.utils
 Requires: requests
 Requires: six
+BuildRequires : WebOb
 BuildRequires : buildreq-distutils3
+BuildRequires : netaddr
+BuildRequires : oslo.concurrency
+BuildRequires : oslo.config
+BuildRequires : oslo.serialization
+BuildRequires : oslo.utils
 BuildRequires : pbr
+BuildRequires : requests
+BuildRequires : six
 
 %description
 ========================
@@ -71,14 +79,21 @@ python3 components for the osprofiler package.
 
 
 %prep
-%setup -q -n osprofiler-2.7.0
+%setup -q -n osprofiler-2.8.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556332433
+export SOURCE_DATE_EPOCH=1558518032
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
