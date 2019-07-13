@@ -6,7 +6,7 @@
 #
 Name     : osprofiler
 Version  : 2.8.1
-Release  : 47
+Release  : 48
 URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.1.tar.gz
 Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.1.tar.gz
 Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.1.tar.gz.asc
