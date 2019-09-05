@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xFC43F0EE211DFED8 (infra-root@openstack.org)
 #
 Name     : osprofiler
-Version  : 2.8.1
-Release  : 48
-URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.1.tar.gz
-Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.1.tar.gz
-Source99 : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.1.tar.gz.asc
+Version  : 2.8.2
+Release  : 49
+URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.2.tar.gz
+Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.2.tar.gz
+Source1 : https://tarballs.openstack.org/osprofiler/osprofiler-2.8.2.tar.gz.asc
 Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -79,14 +79,15 @@ python3 components for the osprofiler package.
 
 
 %prep
-%setup -q -n osprofiler-2.8.1
+%setup -q -n osprofiler-2.8.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562243992
+export SOURCE_DATE_EPOCH=1567648454
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
