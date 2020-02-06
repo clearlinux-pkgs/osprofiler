@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : osprofiler
-Version  : 2.9.0
-Release  : 52
-URL      : https://tarballs.openstack.org/osprofiler/osprofiler-2.9.0.tar.gz
-Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-2.9.0.tar.gz
-Source1 : https://tarballs.openstack.org/osprofiler/osprofiler-2.9.0.tar.gz.asc
+Version  : 3.0.0
+Release  : 53
+URL      : https://tarballs.openstack.org/osprofiler/osprofiler-3.0.0.tar.gz
+Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-3.0.0.tar.gz
+Source1  : https://tarballs.openstack.org/osprofiler/osprofiler-3.0.0.tar.gz.asc
 Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -79,15 +79,15 @@ python3 components for the osprofiler package.
 
 
 %prep
-%setup -q -n osprofiler-2.9.0
-cd %{_builddir}/osprofiler-2.9.0
+%setup -q -n osprofiler-3.0.0
+cd %{_builddir}/osprofiler-3.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1574719009
+export SOURCE_DATE_EPOCH=1580948173
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -104,7 +104,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osprofiler
-cp %{_builddir}/osprofiler-2.9.0/LICENSE %{buildroot}/usr/share/package-licenses/osprofiler/172ca3bbafe312a1cf09cfff26953db2f425c28e
+cp %{_builddir}/osprofiler-3.0.0/LICENSE %{buildroot}/usr/share/package-licenses/osprofiler/172ca3bbafe312a1cf09cfff26953db2f425c28e
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
