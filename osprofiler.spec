@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : osprofiler
-Version  : 3.0.0
-Release  : 54
-URL      : https://tarballs.openstack.org/osprofiler/osprofiler-3.0.0.tar.gz
-Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-3.0.0.tar.gz
-Source1  : https://tarballs.openstack.org/osprofiler/osprofiler-3.0.0.tar.gz.asc
+Version  : 3.1.0
+Release  : 55
+URL      : https://tarballs.openstack.org/osprofiler/osprofiler-3.1.0.tar.gz
+Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-3.1.0.tar.gz
+Source1  : https://tarballs.openstack.org/osprofiler/osprofiler-3.1.0.tar.gz.asc
 Summary  : OpenStack Profiler Library
 Group    : Development/Tools
 License  : Apache-2.0
@@ -37,39 +37,9 @@ BuildRequires : requests
 BuildRequires : six
 
 %description
-========================
-Team and repository tags
-========================
-
-.. image:: https://governance.openstack.org/tc/badges/osprofiler.svg
-    :target: https://governance.openstack.org/tc/reference/tags/index.html
-
-.. Change things from this point on
-
-===========================================================
- OSProfiler -- Library for cross-project profiling library
-===========================================================
-
-.. image:: https://img.shields.io/pypi/v/osprofiler.svg
-    :target: https://pypi.org/project/osprofiler/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/dm/osprofiler.svg
-    :target: https://pypi.org/project/osprofiler/
-    :alt: Downloads
-
-OSProfiler provides a tiny but powerful library that is used by
-most (soon to be all) OpenStack projects and their python clients. It
-provides functionality to be able to generate 1 trace per request, that goes
-through all involved services. This trace can then be extracted and used
-to build a tree of calls which can be quite handy for a variety of
-reasons (for example in isolating cross-project performance issues).
-
-* Free software: Apache license
-* Documentation: https://docs.openstack.org/osprofiler/latest/
-* Source: https://opendev.org/openstack/osprofiler
-* Bugs: https://bugs.launchpad.net/osprofiler
-* Release notes: https://docs.openstack.org/releasenotes/osprofiler
+===================================================
+OSProfiler -- Library for cross-project profiling
+===================================================
 
 %package bin
 Summary: bin components for the osprofiler package.
@@ -102,21 +72,29 @@ Summary: python3 components for the osprofiler package.
 Group: Default
 Requires: python3-core
 Provides: pypi(osprofiler)
+Requires: pypi(oslo.serialization)
+Requires: pypi(six)
+Requires: pypi(prettytable)
+Requires: pypi(webob)
+Requires: pypi(oslo.concurrency)
+Requires: pypi(requests)
+Requires: pypi(oslo.utils)
+Requires: pypi(netaddr)
 
 %description python3
 python3 components for the osprofiler package.
 
 
 %prep
-%setup -q -n osprofiler-3.0.0
-cd %{_builddir}/osprofiler-3.0.0
+%setup -q -n osprofiler-3.1.0
+cd %{_builddir}/osprofiler-3.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583195471
+export SOURCE_DATE_EPOCH=1586273898
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -133,7 +111,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/osprofiler
-cp %{_builddir}/osprofiler-3.0.0/LICENSE %{buildroot}/usr/share/package-licenses/osprofiler/172ca3bbafe312a1cf09cfff26953db2f425c28e
+cp %{_builddir}/osprofiler-3.1.0/LICENSE %{buildroot}/usr/share/package-licenses/osprofiler/172ca3bbafe312a1cf09cfff26953db2f425c28e
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
