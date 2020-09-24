@@ -6,7 +6,7 @@
 #
 Name     : osprofiler
 Version  : 3.4.0
-Release  : 60
+Release  : 61
 URL      : https://tarballs.openstack.org/osprofiler/osprofiler-3.4.0.tar.gz
 Source0  : https://tarballs.openstack.org/osprofiler/osprofiler-3.4.0.tar.gz
 Source1  : https://tarballs.openstack.org/osprofiler/osprofiler-3.4.0.tar.gz.asc
